@@ -11,7 +11,7 @@ This repository contains the **Admin Dashboard** screen of the Student Complaint
 - **Chart areas:** Complaints by Status, Complaints by Category
 - **Recent Complaints:** a table with ID, Title, Student, Category, Status, Priority and Submitted
 
-This stage is the GUI only: the numbers show 0, the chart areas are empty, the table has no rows and the sidebar buttons are not connected yet.
+This stage is the GUI only: the numbers show 0, the chart areas are empty, the table shows sample rows and the sidebar buttons are not connected yet.
 
 ## How to run
 

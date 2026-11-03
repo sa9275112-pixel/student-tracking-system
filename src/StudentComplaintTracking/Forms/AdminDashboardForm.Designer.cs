@@ -29,6 +29,7 @@ namespace StudentComplaintTracking.Forms
         private void InitializeComponent()
         {
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pnlSidebarBorder = new System.Windows.Forms.Panel();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.lblLogoSub = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@ namespace StudentComplaintTracking.Forms
             this.colRecentPriority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRecentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSidebar.SuspendLayout();
+            this.pnlSidebarBorder.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.tlpCards.SuspendLayout();
@@ -106,11 +108,20 @@ namespace StudentComplaintTracking.Forms
             this.pnlSidebar.Controls.Add(this.btnSubmitComplaints);
             this.pnlSidebar.Controls.Add(this.btnDashboard);
             this.pnlSidebar.Controls.Add(this.pnlLogo);
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.pnlSidebar.Controls.Add(this.pnlSidebarBorder);
+            this.pnlSidebar.BackColor = System.Drawing.Color.White;
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Size = new System.Drawing.Size(220, 760);
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.TabIndex = 0;
+            // 
+            // pnlSidebarBorder
+            // 
+            this.pnlSidebarBorder.BackColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            this.pnlSidebarBorder.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlSidebarBorder.Size = new System.Drawing.Size(1, 760);
+            this.pnlSidebarBorder.Name = "pnlSidebarBorder";
+            this.pnlSidebarBorder.TabIndex = 0;
             // 
             // pnlLogo
             // 
@@ -119,7 +130,7 @@ namespace StudentComplaintTracking.Forms
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Size = new System.Drawing.Size(220, 88);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.TabIndex = 0;
+            this.pnlLogo.TabIndex = 1;
             // 
             // lblLogo
             // 
@@ -127,7 +138,7 @@ namespace StudentComplaintTracking.Forms
             this.lblLogo.Location = new System.Drawing.Point(20, 16);
             this.lblLogo.Text = "SCTS";
             this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblLogo.ForeColor = System.Drawing.Color.White;
+            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.TabIndex = 0;
             // 
@@ -136,63 +147,63 @@ namespace StudentComplaintTracking.Forms
             this.lblLogoSub.AutoSize = true;
             this.lblLogoSub.Location = new System.Drawing.Point(22, 52);
             this.lblLogoSub.Text = "Student Complaint Tracker";
-            this.lblLogoSub.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
+            this.lblLogoSub.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
             this.lblLogoSub.Name = "lblLogoSub";
             this.lblLogoSub.TabIndex = 1;
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnDashboard.BackColor = System.Drawing.Color.White;
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(220, 46);
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.TabIndex = 1;
+            this.btnDashboard.TabIndex = 2;
             // 
             // btnSubmitComplaints
             // 
-            this.btnSubmitComplaints.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnSubmitComplaints.BackColor = System.Drawing.Color.White;
             this.btnSubmitComplaints.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmitComplaints.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSubmitComplaints.FlatAppearance.BorderSize = 0;
-            this.btnSubmitComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            this.btnSubmitComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnSubmitComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmitComplaints.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnSubmitComplaints.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            this.btnSubmitComplaints.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnSubmitComplaints.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnSubmitComplaints.Size = new System.Drawing.Size(220, 46);
             this.btnSubmitComplaints.Text = "Submit Complaints";
             this.btnSubmitComplaints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubmitComplaints.UseVisualStyleBackColor = false;
             this.btnSubmitComplaints.Name = "btnSubmitComplaints";
-            this.btnSubmitComplaints.TabIndex = 2;
+            this.btnSubmitComplaints.TabIndex = 3;
             // 
             // btnMyComplaints
             // 
-            this.btnMyComplaints.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnMyComplaints.BackColor = System.Drawing.Color.White;
             this.btnMyComplaints.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMyComplaints.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMyComplaints.FlatAppearance.BorderSize = 0;
-            this.btnMyComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            this.btnMyComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnMyComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMyComplaints.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnMyComplaints.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            this.btnMyComplaints.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnMyComplaints.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnMyComplaints.Size = new System.Drawing.Size(220, 46);
             this.btnMyComplaints.Text = "My Complaints";
             this.btnMyComplaints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyComplaints.UseVisualStyleBackColor = false;
             this.btnMyComplaints.Name = "btnMyComplaints";
-            this.btnMyComplaints.TabIndex = 3;
+            this.btnMyComplaints.TabIndex = 4;
             // 
             // btnAdminDashboard
             // 
@@ -200,53 +211,53 @@ namespace StudentComplaintTracking.Forms
             this.btnAdminDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAdminDashboard.FlatAppearance.BorderSize = 0;
-            this.btnAdminDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            this.btnAdminDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(37, 99, 235);
             this.btnAdminDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminDashboard.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnAdminDashboard.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            this.btnAdminDashboard.ForeColor = System.Drawing.Color.White;
             this.btnAdminDashboard.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnAdminDashboard.Size = new System.Drawing.Size(220, 46);
             this.btnAdminDashboard.Text = "Admin Dashboard";
             this.btnAdminDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdminDashboard.UseVisualStyleBackColor = false;
             this.btnAdminDashboard.Name = "btnAdminDashboard";
-            this.btnAdminDashboard.TabIndex = 4;
+            this.btnAdminDashboard.TabIndex = 5;
             // 
             // btnManageComplaints
             // 
-            this.btnManageComplaints.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnManageComplaints.BackColor = System.Drawing.Color.White;
             this.btnManageComplaints.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageComplaints.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnManageComplaints.FlatAppearance.BorderSize = 0;
-            this.btnManageComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            this.btnManageComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnManageComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageComplaints.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnManageComplaints.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            this.btnManageComplaints.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
             this.btnManageComplaints.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnManageComplaints.Size = new System.Drawing.Size(220, 46);
             this.btnManageComplaints.Text = "Manage Complaints";
             this.btnManageComplaints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageComplaints.UseVisualStyleBackColor = false;
             this.btnManageComplaints.Name = "btnManageComplaints";
-            this.btnManageComplaints.TabIndex = 5;
+            this.btnManageComplaints.TabIndex = 6;
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(241, 245, 249);
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(252, 165, 165);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(220, 38, 38);
             this.btnLogout.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(220, 46);
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.TabIndex = 6;
+            this.btnLogout.TabIndex = 7;
             // 
             // pnlContent
             // 
@@ -668,6 +679,8 @@ namespace StudentComplaintTracking.Forms
             this.pnlContent.PerformLayout();
             this.pnlLogo.ResumeLayout(false);
             this.pnlLogo.PerformLayout();
+            this.pnlSidebarBorder.ResumeLayout(false);
+            this.pnlSidebarBorder.PerformLayout();
             this.pnlSidebar.ResumeLayout(false);
             this.pnlSidebar.PerformLayout();
             this.ResumeLayout(false);
@@ -678,6 +691,7 @@ namespace StudentComplaintTracking.Forms
         #endregion
 
         private System.Windows.Forms.Panel pnlSidebar;
+        private System.Windows.Forms.Panel pnlSidebarBorder;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Label lblLogoSub;
