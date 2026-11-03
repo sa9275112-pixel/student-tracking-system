@@ -6,12 +6,12 @@ This repository contains the **Admin Dashboard** screen of the Student Complaint
 
 ## What's on the screen
 
-- **Sidebar:** "Student Complaints" title, Dashboard, New Complaint and My Complaints buttons, and Logout at the bottom
-- **Header:** "Welcome Back, Admin!" with a short subtitle
-- **Stats box:** Resolved, Pending and Total Complaints, each with an icon and a number
-- **Recent Complaints:** a table with ComplaintID, Title, Category, Date and Status
+- **Sidebar:** Dashboard, Submit Complaints, My Complaints, Admin Dashboard (current page), Manage Complaints, and Logout at the bottom
+- **Summary cards:** Total complaints, Open / New, In progress, Resolved
+- **Chart areas:** Complaints by Status, Complaints by Category
+- **Recent Complaints:** a table with ID, Title, Student, Category, Status, Priority and Submitted
 
-This stage is the GUI only. The numbers and table rows are sample data (see `LoadSampleRows()` in `AdminDashboardForm.cs`), and the buttons are not connected yet.
+This stage is the GUI only: the numbers show 0, the chart areas are empty, the table has no rows and the sidebar buttons are not connected yet.
 
 ## How to run
 
