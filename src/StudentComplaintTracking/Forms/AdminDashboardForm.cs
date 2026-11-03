@@ -13,6 +13,27 @@ namespace StudentComplaintTracking.Forms
         }
 
         /// <summary>
+        /// Paints the sidebar with a navy-to-blue gradient.
+        /// </summary>
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+            var rect = pnlSidebar.ClientRectangle;
+            if (rect.Width == 0 || rect.Height == 0) return;
+
+            using var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                rect,
+                Color.FromArgb(14, 18, 62),
+                Color.FromArgb(42, 66, 180),
+                System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal);
+            e.Graphics.FillRectangle(brush, rect);
+        }
+
+        private void pnlSidebar_Resize(object sender, EventArgs e)
+        {
+            pnlSidebar.Invalidate();
+        }
+
+        /// <summary>
         /// Placeholder rows so the table looks filled in. Replace with database data later.
         /// </summary>
         private void LoadSampleRows()
