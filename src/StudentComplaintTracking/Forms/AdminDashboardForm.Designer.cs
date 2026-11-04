@@ -207,6 +207,7 @@ namespace StudentComplaintTracking.Forms
             this.btnManageComplaints.UseVisualStyleBackColor = false;
             this.btnManageComplaints.Name = "btnManageComplaints";
             this.btnManageComplaints.TabIndex = 5;
+            this.btnManageComplaints.Click += new System.EventHandler(this.btnManageComplaints_Click);
             // 
             // btnLogout
             // 
