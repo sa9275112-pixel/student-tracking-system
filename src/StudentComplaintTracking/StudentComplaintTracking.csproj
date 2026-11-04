@@ -14,4 +14,10 @@
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Forms/Form1.cs" />
+    <Compile Remove="Forms/Form1.Designer.cs" />
+    <EmbeddedResource Remove="Forms/Form1.resx" />
+  </ItemGroup>
+
 </Project>
