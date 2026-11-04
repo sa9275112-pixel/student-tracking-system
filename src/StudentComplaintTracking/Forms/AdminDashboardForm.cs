@@ -12,25 +12,36 @@ namespace StudentComplaintTracking.Forms
             LoadSampleRows();
         }
 
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e) => SidebarStyle.PaintGradient(pnlSidebar, e);
+
+        private void pnlSidebar_Resize(object sender, EventArgs e) => pnlSidebar.Invalidate();
+
         /// <summary>
-        /// Paints the sidebar with a navy-to-blue gradient.
+        /// Opens Manage Complaints in place of this window, and comes back when it returns.
         /// </summary>
-        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        private void btnManageComplaints_Click(object sender, EventArgs e)
         {
-            var rect = pnlSidebar.ClientRectangle;
-            if (rect.Width == 0 || rect.Height == 0) return;
-
-            using var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
-                rect,
-                Color.FromArgb(14, 18, 62),
-                Color.FromArgb(42, 66, 180),
-                System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal);
-            e.Graphics.FillRectangle(brush, rect);
-        }
-
-        private void pnlSidebar_Resize(object sender, EventArgs e)
-        {
-            pnlSidebar.Invalidate();
+            var manage = new ManageComplaintsForm
+            {
+                StartPosition = FormStartPosition.Manual,
+                Bounds = Bounds,
+                WindowState = WindowState
+            };
+            manage.FormClosed += (s, args) =>
+            {
+                if (manage.BackToDashboard)
+                {
+                    WindowState = manage.WindowState;
+                    if (manage.WindowState == FormWindowState.Normal) Bounds = manage.Bounds;
+                    Show();
+                }
+                else
+                {
+                    Close();
+                }
+            };
+            Hide();
+            manage.Show();
         }
 
         /// <summary>
