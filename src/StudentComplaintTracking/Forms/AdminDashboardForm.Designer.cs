@@ -28,626 +28,601 @@ namespace StudentComplaintTracking.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.lblSideTitle = new System.Windows.Forms.Label();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnSubmitComplaints = new System.Windows.Forms.Button();
-            this.btnMyComplaints = new System.Windows.Forms.Button();
-            this.btnAdminDashboard = new System.Windows.Forms.Button();
-            this.btnManageComplaints = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.tlpCards = new System.Windows.Forms.TableLayoutPanel();
-            this.cardTotal = new System.Windows.Forms.Panel();
-            this.pnlAccentTotal = new System.Windows.Forms.Panel();
-            this.lblCapTotal = new System.Windows.Forms.Label();
-            this.lblValTotal = new System.Windows.Forms.Label();
-            this.cardOpen = new System.Windows.Forms.Panel();
-            this.pnlAccentOpen = new System.Windows.Forms.Panel();
-            this.lblCapOpen = new System.Windows.Forms.Label();
-            this.lblValOpen = new System.Windows.Forms.Label();
-            this.cardInProgress = new System.Windows.Forms.Panel();
-            this.pnlAccentInProgress = new System.Windows.Forms.Panel();
-            this.lblCapInProgress = new System.Windows.Forms.Label();
-            this.lblValInProgress = new System.Windows.Forms.Label();
-            this.cardResolved = new System.Windows.Forms.Panel();
-            this.pnlAccentResolved = new System.Windows.Forms.Panel();
-            this.lblCapResolved = new System.Windows.Forms.Label();
-            this.lblValResolved = new System.Windows.Forms.Label();
-            this.tlpCharts = new System.Windows.Forms.TableLayoutPanel();
-            this.cardChartStatus = new System.Windows.Forms.Panel();
-            this.lblChartStatusTitle = new System.Windows.Forms.Label();
-            this.pnlChartStatus = new System.Windows.Forms.Panel();
-            this.cardChartCategory = new System.Windows.Forms.Panel();
-            this.lblChartCategoryTitle = new System.Windows.Forms.Label();
-            this.pnlChartCategory = new System.Windows.Forms.Panel();
-            this.pnlRecentWrap = new System.Windows.Forms.Panel();
-            this.pnlRecent = new System.Windows.Forms.Panel();
-            this.lblRecentTitle = new System.Windows.Forms.Label();
-            this.dgvRecent = new System.Windows.Forms.DataGridView();
-            this.colRecentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecentTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecentStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecentCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecentStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecentPriority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlSidebar.SuspendLayout();
-            this.pnlContent.SuspendLayout();
-            this.tlpCards.SuspendLayout();
-            this.cardTotal.SuspendLayout();
-            this.pnlAccentTotal.SuspendLayout();
-            this.cardOpen.SuspendLayout();
-            this.pnlAccentOpen.SuspendLayout();
-            this.cardInProgress.SuspendLayout();
-            this.pnlAccentInProgress.SuspendLayout();
-            this.cardResolved.SuspendLayout();
-            this.pnlAccentResolved.SuspendLayout();
-            this.tlpCharts.SuspendLayout();
-            this.cardChartStatus.SuspendLayout();
-            this.pnlChartStatus.SuspendLayout();
-            this.cardChartCategory.SuspendLayout();
-            this.pnlChartCategory.SuspendLayout();
-            this.pnlRecentWrap.SuspendLayout();
-            this.pnlRecent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecent)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // pnlSidebar
-            // 
-            this.pnlSidebar.Controls.Add(this.btnLogout);
-            this.pnlSidebar.Controls.Add(this.btnManageComplaints);
-            this.pnlSidebar.Controls.Add(this.btnAdminDashboard);
-            this.pnlSidebar.Controls.Add(this.btnMyComplaints);
-            this.pnlSidebar.Controls.Add(this.btnSubmitComplaints);
-            this.pnlSidebar.Controls.Add(this.btnDashboard);
-            this.pnlSidebar.Controls.Add(this.lblSideTitle);
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(22, 30, 100);
-            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.Size = new System.Drawing.Size(220, 760);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.TabIndex = 0;
-            this.pnlSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSidebar_Paint);
-            this.pnlSidebar.Resize += new System.EventHandler(this.pnlSidebar_Resize);
-            // 
-            // lblSideTitle
-            // 
-            this.lblSideTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblSideTitle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.lblSideTitle.ForeColor = System.Drawing.Color.White;
-            this.lblSideTitle.Location = new System.Drawing.Point(0, 40);
-            this.lblSideTitle.Size = new System.Drawing.Size(220, 40);
-            this.lblSideTitle.Text = "Student Complaints";
-            this.lblSideTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSideTitle.Name = "lblSideTitle";
-            this.lblSideTitle.TabIndex = 0;
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(20, 26, 90);
-            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(190, 198, 230);
-            this.btnDashboard.FlatAppearance.BorderSize = 1;
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 52, 140);
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(20, 120);
-            this.btnDashboard.Size = new System.Drawing.Size(180, 40);
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.TabIndex = 1;
-            // 
-            // btnSubmitComplaints
-            // 
-            this.btnSubmitComplaints.BackColor = System.Drawing.Color.FromArgb(20, 26, 90);
-            this.btnSubmitComplaints.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubmitComplaints.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(190, 198, 230);
-            this.btnSubmitComplaints.FlatAppearance.BorderSize = 1;
-            this.btnSubmitComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 52, 140);
-            this.btnSubmitComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmitComplaints.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSubmitComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitComplaints.Location = new System.Drawing.Point(20, 186);
-            this.btnSubmitComplaints.Size = new System.Drawing.Size(180, 40);
-            this.btnSubmitComplaints.Text = "Submit Complaints";
-            this.btnSubmitComplaints.UseVisualStyleBackColor = false;
-            this.btnSubmitComplaints.Name = "btnSubmitComplaints";
-            this.btnSubmitComplaints.TabIndex = 2;
-            // 
-            // btnMyComplaints
-            // 
-            this.btnMyComplaints.BackColor = System.Drawing.Color.FromArgb(20, 26, 90);
-            this.btnMyComplaints.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMyComplaints.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(190, 198, 230);
-            this.btnMyComplaints.FlatAppearance.BorderSize = 1;
-            this.btnMyComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 52, 140);
-            this.btnMyComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyComplaints.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnMyComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnMyComplaints.Location = new System.Drawing.Point(20, 252);
-            this.btnMyComplaints.Size = new System.Drawing.Size(180, 40);
-            this.btnMyComplaints.Text = "My Complaints";
-            this.btnMyComplaints.UseVisualStyleBackColor = false;
-            this.btnMyComplaints.Name = "btnMyComplaints";
-            this.btnMyComplaints.TabIndex = 3;
-            // 
-            // btnAdminDashboard
-            // 
-            this.btnAdminDashboard.BackColor = System.Drawing.Color.FromArgb(20, 26, 90);
-            this.btnAdminDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminDashboard.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAdminDashboard.FlatAppearance.BorderSize = 2;
-            this.btnAdminDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 52, 140);
-            this.btnAdminDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminDashboard.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnAdminDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnAdminDashboard.Location = new System.Drawing.Point(20, 318);
-            this.btnAdminDashboard.Size = new System.Drawing.Size(180, 40);
-            this.btnAdminDashboard.Text = "Admin Dashboard";
-            this.btnAdminDashboard.UseVisualStyleBackColor = false;
-            this.btnAdminDashboard.Name = "btnAdminDashboard";
-            this.btnAdminDashboard.TabIndex = 4;
-            // 
-            // btnManageComplaints
-            // 
-            this.btnManageComplaints.BackColor = System.Drawing.Color.FromArgb(20, 26, 90);
-            this.btnManageComplaints.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManageComplaints.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(190, 198, 230);
-            this.btnManageComplaints.FlatAppearance.BorderSize = 1;
-            this.btnManageComplaints.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 52, 140);
-            this.btnManageComplaints.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageComplaints.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnManageComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnManageComplaints.Location = new System.Drawing.Point(20, 384);
-            this.btnManageComplaints.Size = new System.Drawing.Size(180, 40);
-            this.btnManageComplaints.Text = "Manage Complaints";
-            this.btnManageComplaints.UseVisualStyleBackColor = false;
-            this.btnManageComplaints.Name = "btnManageComplaints";
-            this.btnManageComplaints.TabIndex = 5;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(36, 52, 145);
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(190, 198, 230);
-            this.btnLogout.FlatAppearance.BorderSize = 1;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(40, 52, 140);
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(20, 696);
-            this.btnLogout.Size = new System.Drawing.Size(180, 40);
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.TabIndex = 6;
+            pnlContent = new Panel();
+            pnlRecentWrap = new Panel();
+            pnlRecent = new Panel();
+            dgvRecent = new DataGridView();
+            colRecentId = new DataGridViewTextBoxColumn();
+            colRecentTitle = new DataGridViewTextBoxColumn();
+            colRecentStudent = new DataGridViewTextBoxColumn();
+            colRecentCategory = new DataGridViewTextBoxColumn();
+            colRecentStatus = new DataGridViewTextBoxColumn();
+            colRecentPriority = new DataGridViewTextBoxColumn();
+            colRecentDate = new DataGridViewTextBoxColumn();
+            lblRecentTitle = new Label();
+            tlpCharts = new TableLayoutPanel();
+            cardChartStatus = new Panel();
+            pnlChartStatus = new Panel();
+            lblChartStatusTitle = new Label();
+            cardChartCategory = new Panel();
+            pnlChartCategory = new Panel();
+            lblChartCategoryTitle = new Label();
+            tlpCards = new TableLayoutPanel();
+            cardTotal = new Panel();
+            lblValTotal = new Label();
+            lblCapTotal = new Label();
+            pnlAccentTotal = new Panel();
+            cardOpen = new Panel();
+            lblValOpen = new Label();
+            lblCapOpen = new Label();
+            pnlAccentOpen = new Panel();
+            cardInProgress = new Panel();
+            lblValInProgress = new Label();
+            lblCapInProgress = new Label();
+            pnlAccentInProgress = new Panel();
+            cardResolved = new Panel();
+            lblValResolved = new Label();
+            lblCapResolved = new Label();
+            pnlAccentResolved = new Panel();
+            lblTitle = new Label();
+            lblSideTitle = new Label();
+            btnDashboard = new Button();
+            btnAdminDashboard = new Button();
+            btnManageComplaints = new Button();
+            btnLogout = new Button();
+            pnlSidebar = new Panel();
+            pnlContent.SuspendLayout();
+            pnlRecentWrap.SuspendLayout();
+            pnlRecent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRecent).BeginInit();
+            tlpCharts.SuspendLayout();
+            cardChartStatus.SuspendLayout();
+            cardChartCategory.SuspendLayout();
+            tlpCards.SuspendLayout();
+            cardTotal.SuspendLayout();
+            cardOpen.SuspendLayout();
+            cardInProgress.SuspendLayout();
+            cardResolved.SuspendLayout();
+            pnlSidebar.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlContent
             // 
-            this.pnlContent.Controls.Add(this.pnlRecentWrap);
-            this.pnlContent.Controls.Add(this.tlpCharts);
-            this.pnlContent.Controls.Add(this.tlpCards);
-            this.pnlContent.Controls.Add(this.lblTitle);
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Padding = new System.Windows.Forms.Padding(16, 0, 16, 16);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.TabIndex = 1;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblTitle.Padding = new System.Windows.Forms.Padding(4, 14, 0, 0);
-            this.lblTitle.Size = new System.Drawing.Size(900, 56);
-            this.lblTitle.Text = "Admin Dashboard";
-            this.lblTitle.UseMnemonic = false;
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.TabIndex = 0;
-            // 
-            // tlpCards
-            // 
-            this.tlpCards.Controls.Add(this.cardTotal, 0, 0);
-            this.tlpCards.Controls.Add(this.cardOpen, 1, 0);
-            this.tlpCards.Controls.Add(this.cardInProgress, 2, 0);
-            this.tlpCards.Controls.Add(this.cardResolved, 3, 0);
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0F));
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0F));
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0F));
-            this.tlpCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0F));
-            this.tlpCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0F));
-            this.tlpCards.ColumnCount = 4;
-            this.tlpCards.RowCount = 1;
-            this.tlpCards.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpCards.Size = new System.Drawing.Size(1028, 120);
-            this.tlpCards.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.tlpCards.Name = "tlpCards";
-            this.tlpCards.TabIndex = 1;
-            // 
-            // cardTotal
-            // 
-            this.cardTotal.Controls.Add(this.lblValTotal);
-            this.cardTotal.Controls.Add(this.lblCapTotal);
-            this.cardTotal.Controls.Add(this.pnlAccentTotal);
-            this.cardTotal.BackColor = System.Drawing.Color.White;
-            this.cardTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardTotal.Margin = new System.Windows.Forms.Padding(0, 8, 6, 8);
-            this.cardTotal.Name = "cardTotal";
-            this.cardTotal.TabIndex = 0;
-            // 
-            // pnlAccentTotal
-            // 
-            this.pnlAccentTotal.BackColor = System.Drawing.Color.FromArgb(37, 99, 235);
-            this.pnlAccentTotal.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAccentTotal.Size = new System.Drawing.Size(6, 104);
-            this.pnlAccentTotal.Name = "pnlAccentTotal";
-            this.pnlAccentTotal.TabIndex = 0;
-            // 
-            // lblCapTotal
-            // 
-            this.lblCapTotal.AutoSize = true;
-            this.lblCapTotal.Location = new System.Drawing.Point(22, 18);
-            this.lblCapTotal.Text = "Total complaints";
-            this.lblCapTotal.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblCapTotal.Name = "lblCapTotal";
-            this.lblCapTotal.TabIndex = 1;
-            // 
-            // lblValTotal
-            // 
-            this.lblValTotal.AutoSize = true;
-            this.lblValTotal.Location = new System.Drawing.Point(18, 42);
-            this.lblValTotal.Text = "0";
-            this.lblValTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblValTotal.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblValTotal.Name = "lblValTotal";
-            this.lblValTotal.TabIndex = 2;
-            // 
-            // cardOpen
-            // 
-            this.cardOpen.Controls.Add(this.lblValOpen);
-            this.cardOpen.Controls.Add(this.lblCapOpen);
-            this.cardOpen.Controls.Add(this.pnlAccentOpen);
-            this.cardOpen.BackColor = System.Drawing.Color.White;
-            this.cardOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardOpen.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.cardOpen.Name = "cardOpen";
-            this.cardOpen.TabIndex = 1;
-            // 
-            // pnlAccentOpen
-            // 
-            this.pnlAccentOpen.BackColor = System.Drawing.Color.FromArgb(217, 119, 6);
-            this.pnlAccentOpen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAccentOpen.Size = new System.Drawing.Size(6, 104);
-            this.pnlAccentOpen.Name = "pnlAccentOpen";
-            this.pnlAccentOpen.TabIndex = 0;
-            // 
-            // lblCapOpen
-            // 
-            this.lblCapOpen.AutoSize = true;
-            this.lblCapOpen.Location = new System.Drawing.Point(22, 18);
-            this.lblCapOpen.Text = "Open / New";
-            this.lblCapOpen.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblCapOpen.Name = "lblCapOpen";
-            this.lblCapOpen.TabIndex = 1;
-            // 
-            // lblValOpen
-            // 
-            this.lblValOpen.AutoSize = true;
-            this.lblValOpen.Location = new System.Drawing.Point(18, 42);
-            this.lblValOpen.Text = "0";
-            this.lblValOpen.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblValOpen.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblValOpen.Name = "lblValOpen";
-            this.lblValOpen.TabIndex = 2;
-            // 
-            // cardInProgress
-            // 
-            this.cardInProgress.Controls.Add(this.lblValInProgress);
-            this.cardInProgress.Controls.Add(this.lblCapInProgress);
-            this.cardInProgress.Controls.Add(this.pnlAccentInProgress);
-            this.cardInProgress.BackColor = System.Drawing.Color.White;
-            this.cardInProgress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardInProgress.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.cardInProgress.Name = "cardInProgress";
-            this.cardInProgress.TabIndex = 2;
-            // 
-            // pnlAccentInProgress
-            // 
-            this.pnlAccentInProgress.BackColor = System.Drawing.Color.FromArgb(124, 58, 237);
-            this.pnlAccentInProgress.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAccentInProgress.Size = new System.Drawing.Size(6, 104);
-            this.pnlAccentInProgress.Name = "pnlAccentInProgress";
-            this.pnlAccentInProgress.TabIndex = 0;
-            // 
-            // lblCapInProgress
-            // 
-            this.lblCapInProgress.AutoSize = true;
-            this.lblCapInProgress.Location = new System.Drawing.Point(22, 18);
-            this.lblCapInProgress.Text = "In progress";
-            this.lblCapInProgress.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblCapInProgress.Name = "lblCapInProgress";
-            this.lblCapInProgress.TabIndex = 1;
-            // 
-            // lblValInProgress
-            // 
-            this.lblValInProgress.AutoSize = true;
-            this.lblValInProgress.Location = new System.Drawing.Point(18, 42);
-            this.lblValInProgress.Text = "0";
-            this.lblValInProgress.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblValInProgress.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblValInProgress.Name = "lblValInProgress";
-            this.lblValInProgress.TabIndex = 2;
-            // 
-            // cardResolved
-            // 
-            this.cardResolved.Controls.Add(this.lblValResolved);
-            this.cardResolved.Controls.Add(this.lblCapResolved);
-            this.cardResolved.Controls.Add(this.pnlAccentResolved);
-            this.cardResolved.BackColor = System.Drawing.Color.White;
-            this.cardResolved.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardResolved.Margin = new System.Windows.Forms.Padding(6, 8, 0, 8);
-            this.cardResolved.Name = "cardResolved";
-            this.cardResolved.TabIndex = 3;
-            // 
-            // pnlAccentResolved
-            // 
-            this.pnlAccentResolved.BackColor = System.Drawing.Color.FromArgb(22, 163, 74);
-            this.pnlAccentResolved.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlAccentResolved.Size = new System.Drawing.Size(6, 104);
-            this.pnlAccentResolved.Name = "pnlAccentResolved";
-            this.pnlAccentResolved.TabIndex = 0;
-            // 
-            // lblCapResolved
-            // 
-            this.lblCapResolved.AutoSize = true;
-            this.lblCapResolved.Location = new System.Drawing.Point(22, 18);
-            this.lblCapResolved.Text = "Resolved";
-            this.lblCapResolved.ForeColor = System.Drawing.Color.FromArgb(100, 116, 139);
-            this.lblCapResolved.Name = "lblCapResolved";
-            this.lblCapResolved.TabIndex = 1;
-            // 
-            // lblValResolved
-            // 
-            this.lblValResolved.AutoSize = true;
-            this.lblValResolved.Location = new System.Drawing.Point(18, 42);
-            this.lblValResolved.Text = "0";
-            this.lblValResolved.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblValResolved.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblValResolved.Name = "lblValResolved";
-            this.lblValResolved.TabIndex = 2;
-            // 
-            // tlpCharts
-            // 
-            this.tlpCharts.Controls.Add(this.cardChartStatus, 0, 0);
-            this.tlpCharts.Controls.Add(this.cardChartCategory, 1, 0);
-            this.tlpCharts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0F));
-            this.tlpCharts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0F));
-            this.tlpCharts.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0F));
-            this.tlpCharts.ColumnCount = 2;
-            this.tlpCharts.RowCount = 1;
-            this.tlpCharts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpCharts.Size = new System.Drawing.Size(1028, 290);
-            this.tlpCharts.Name = "tlpCharts";
-            this.tlpCharts.TabIndex = 2;
-            // 
-            // cardChartStatus
-            // 
-            this.cardChartStatus.Controls.Add(this.pnlChartStatus);
-            this.cardChartStatus.Controls.Add(this.lblChartStatusTitle);
-            this.cardChartStatus.BackColor = System.Drawing.Color.White;
-            this.cardChartStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardChartStatus.Margin = new System.Windows.Forms.Padding(0, 8, 6, 8);
-            this.cardChartStatus.Name = "cardChartStatus";
-            this.cardChartStatus.TabIndex = 0;
-            // 
-            // lblChartStatusTitle
-            // 
-            this.lblChartStatusTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblChartStatusTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblChartStatusTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblChartStatusTitle.Padding = new System.Windows.Forms.Padding(12, 10, 0, 0);
-            this.lblChartStatusTitle.Size = new System.Drawing.Size(300, 38);
-            this.lblChartStatusTitle.Text = "Complaints by Status";
-            this.lblChartStatusTitle.Name = "lblChartStatusTitle";
-            this.lblChartStatusTitle.TabIndex = 0;
-            // 
-            // pnlChartStatus
-            // 
-            this.pnlChartStatus.BackColor = System.Drawing.Color.White;
-            this.pnlChartStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChartStatus.Name = "pnlChartStatus";
-            this.pnlChartStatus.TabIndex = 1;
-            // 
-            // cardChartCategory
-            // 
-            this.cardChartCategory.Controls.Add(this.pnlChartCategory);
-            this.cardChartCategory.Controls.Add(this.lblChartCategoryTitle);
-            this.cardChartCategory.BackColor = System.Drawing.Color.White;
-            this.cardChartCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardChartCategory.Margin = new System.Windows.Forms.Padding(6, 8, 0, 8);
-            this.cardChartCategory.Name = "cardChartCategory";
-            this.cardChartCategory.TabIndex = 1;
-            // 
-            // lblChartCategoryTitle
-            // 
-            this.lblChartCategoryTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblChartCategoryTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblChartCategoryTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblChartCategoryTitle.Padding = new System.Windows.Forms.Padding(12, 10, 0, 0);
-            this.lblChartCategoryTitle.Size = new System.Drawing.Size(300, 38);
-            this.lblChartCategoryTitle.Text = "Complaints by Category";
-            this.lblChartCategoryTitle.Name = "lblChartCategoryTitle";
-            this.lblChartCategoryTitle.TabIndex = 0;
-            // 
-            // pnlChartCategory
-            // 
-            this.pnlChartCategory.BackColor = System.Drawing.Color.White;
-            this.pnlChartCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChartCategory.Name = "pnlChartCategory";
-            this.pnlChartCategory.TabIndex = 1;
+            pnlContent.BackColor = Color.FromArgb(241, 245, 249);
+            pnlContent.Controls.Add(pnlRecentWrap);
+            pnlContent.Controls.Add(tlpCharts);
+            pnlContent.Controls.Add(tlpCards);
+            pnlContent.Controls.Add(lblTitle);
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(220, 0);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Padding = new Padding(16, 0, 16, 16);
+            pnlContent.Size = new Size(1060, 760);
+            pnlContent.TabIndex = 1;
             // 
             // pnlRecentWrap
             // 
-            this.pnlRecentWrap.Controls.Add(this.pnlRecent);
-            this.pnlRecentWrap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRecentWrap.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.pnlRecentWrap.Name = "pnlRecentWrap";
-            this.pnlRecentWrap.TabIndex = 3;
+            pnlRecentWrap.Controls.Add(pnlRecent);
+            pnlRecentWrap.Dock = DockStyle.Fill;
+            pnlRecentWrap.Location = new Point(16, 466);
+            pnlRecentWrap.Name = "pnlRecentWrap";
+            pnlRecentWrap.Padding = new Padding(0, 8, 0, 0);
+            pnlRecentWrap.Size = new Size(1028, 278);
+            pnlRecentWrap.TabIndex = 3;
             // 
             // pnlRecent
             // 
-            this.pnlRecent.Controls.Add(this.dgvRecent);
-            this.pnlRecent.Controls.Add(this.lblRecentTitle);
-            this.pnlRecent.BackColor = System.Drawing.Color.White;
-            this.pnlRecent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRecent.Name = "pnlRecent";
-            this.pnlRecent.TabIndex = 0;
-            // 
-            // lblRecentTitle
-            // 
-            this.lblRecentTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblRecentTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblRecentTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblRecentTitle.Padding = new System.Windows.Forms.Padding(12, 10, 0, 0);
-            this.lblRecentTitle.Size = new System.Drawing.Size(300, 38);
-            this.lblRecentTitle.Text = "Recent Complaints";
-            this.lblRecentTitle.Name = "lblRecentTitle";
-            this.lblRecentTitle.TabIndex = 0;
+            pnlRecent.BackColor = Color.White;
+            pnlRecent.Controls.Add(dgvRecent);
+            pnlRecent.Controls.Add(lblRecentTitle);
+            pnlRecent.Dock = DockStyle.Fill;
+            pnlRecent.Location = new Point(0, 8);
+            pnlRecent.Name = "pnlRecent";
+            pnlRecent.Size = new Size(1028, 270);
+            pnlRecent.TabIndex = 0;
             // 
             // dgvRecent
             // 
-            this.dgvRecent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRecentId,
-            this.colRecentTitle,
-            this.colRecentStudent,
-            this.colRecentCategory,
-            this.colRecentStatus,
-            this.colRecentPriority,
-            this.colRecentDate});
-            this.dgvRecent.AllowUserToAddRows = false;
-            this.dgvRecent.AllowUserToDeleteRows = false;
-            this.dgvRecent.AllowUserToResizeRows = false;
-            this.dgvRecent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRecent.BackgroundColor = System.Drawing.Color.White;
-            this.dgvRecent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvRecent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvRecent.ColumnHeadersHeight = 36;
-            this.dgvRecent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRecent.GridColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            this.dgvRecent.MultiSelect = false;
-            this.dgvRecent.ReadOnly = true;
-            this.dgvRecent.RowHeadersVisible = false;
-            this.dgvRecent.RowTemplate.Height = 30;
-            this.dgvRecent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecent.Name = "dgvRecent";
-            this.dgvRecent.TabIndex = 1;
+            dgvRecent.AllowUserToAddRows = false;
+            dgvRecent.AllowUserToDeleteRows = false;
+            dgvRecent.AllowUserToResizeRows = false;
+            dgvRecent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRecent.BackgroundColor = Color.White;
+            dgvRecent.BorderStyle = BorderStyle.None;
+            dgvRecent.ColumnHeadersHeight = 36;
+            dgvRecent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvRecent.Columns.AddRange(new DataGridViewColumn[] { colRecentId, colRecentTitle, colRecentStudent, colRecentCategory, colRecentStatus, colRecentPriority, colRecentDate });
+            dgvRecent.Dock = DockStyle.Fill;
+            dgvRecent.GridColor = Color.FromArgb(226, 232, 240);
+            dgvRecent.Location = new Point(0, 38);
+            dgvRecent.MultiSelect = false;
+            dgvRecent.Name = "dgvRecent";
+            dgvRecent.ReadOnly = true;
+            dgvRecent.RowHeadersVisible = false;
+            dgvRecent.RowHeadersWidth = 51;
+            dgvRecent.RowTemplate.Height = 30;
+            dgvRecent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRecent.Size = new Size(1028, 232);
+            dgvRecent.TabIndex = 1;
             // 
             // colRecentId
             // 
-            this.colRecentId.FillWeight = 50F;
-            this.colRecentId.HeaderText = "ID";
-            this.colRecentId.ReadOnly = true;
-            this.colRecentId.Name = "colRecentId";
+            colRecentId.FillWeight = 50F;
+            colRecentId.HeaderText = "ID";
+            colRecentId.MinimumWidth = 6;
+            colRecentId.Name = "colRecentId";
+            colRecentId.ReadOnly = true;
             // 
             // colRecentTitle
             // 
-            this.colRecentTitle.FillWeight = 200F;
-            this.colRecentTitle.HeaderText = "Title";
-            this.colRecentTitle.ReadOnly = true;
-            this.colRecentTitle.Name = "colRecentTitle";
+            colRecentTitle.FillWeight = 200F;
+            colRecentTitle.HeaderText = "Title";
+            colRecentTitle.MinimumWidth = 6;
+            colRecentTitle.Name = "colRecentTitle";
+            colRecentTitle.ReadOnly = true;
             // 
             // colRecentStudent
             // 
-            this.colRecentStudent.FillWeight = 130F;
-            this.colRecentStudent.HeaderText = "Student";
-            this.colRecentStudent.ReadOnly = true;
-            this.colRecentStudent.Name = "colRecentStudent";
+            colRecentStudent.FillWeight = 130F;
+            colRecentStudent.HeaderText = "Student";
+            colRecentStudent.MinimumWidth = 6;
+            colRecentStudent.Name = "colRecentStudent";
+            colRecentStudent.ReadOnly = true;
             // 
             // colRecentCategory
             // 
-            this.colRecentCategory.FillWeight = 100F;
-            this.colRecentCategory.HeaderText = "Category";
-            this.colRecentCategory.ReadOnly = true;
-            this.colRecentCategory.Name = "colRecentCategory";
+            colRecentCategory.HeaderText = "Category";
+            colRecentCategory.MinimumWidth = 6;
+            colRecentCategory.Name = "colRecentCategory";
+            colRecentCategory.ReadOnly = true;
             // 
             // colRecentStatus
             // 
-            this.colRecentStatus.FillWeight = 90F;
-            this.colRecentStatus.HeaderText = "Status";
-            this.colRecentStatus.ReadOnly = true;
-            this.colRecentStatus.Name = "colRecentStatus";
+            colRecentStatus.FillWeight = 90F;
+            colRecentStatus.HeaderText = "Status";
+            colRecentStatus.MinimumWidth = 6;
+            colRecentStatus.Name = "colRecentStatus";
+            colRecentStatus.ReadOnly = true;
             // 
             // colRecentPriority
             // 
-            this.colRecentPriority.FillWeight = 80F;
-            this.colRecentPriority.HeaderText = "Priority";
-            this.colRecentPriority.ReadOnly = true;
-            this.colRecentPriority.Name = "colRecentPriority";
+            colRecentPriority.FillWeight = 80F;
+            colRecentPriority.HeaderText = "Priority";
+            colRecentPriority.MinimumWidth = 6;
+            colRecentPriority.Name = "colRecentPriority";
+            colRecentPriority.ReadOnly = true;
             // 
             // colRecentDate
             // 
-            this.colRecentDate.FillWeight = 90F;
-            this.colRecentDate.HeaderText = "Submitted";
-            this.colRecentDate.ReadOnly = true;
-            this.colRecentDate.Name = "colRecentDate";
+            colRecentDate.FillWeight = 90F;
+            colRecentDate.HeaderText = "Submitted";
+            colRecentDate.MinimumWidth = 6;
+            colRecentDate.Name = "colRecentDate";
+            colRecentDate.ReadOnly = true;
+            // 
+            // lblRecentTitle
+            // 
+            lblRecentTitle.Dock = DockStyle.Top;
+            lblRecentTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblRecentTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblRecentTitle.Location = new Point(0, 0);
+            lblRecentTitle.Name = "lblRecentTitle";
+            lblRecentTitle.Padding = new Padding(12, 10, 0, 0);
+            lblRecentTitle.Size = new Size(1028, 38);
+            lblRecentTitle.TabIndex = 0;
+            lblRecentTitle.Text = "Recent Complaints";
+            // 
+            // tlpCharts
+            // 
+            tlpCharts.ColumnCount = 2;
+            tlpCharts.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpCharts.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpCharts.Controls.Add(cardChartStatus, 0, 0);
+            tlpCharts.Controls.Add(cardChartCategory, 1, 0);
+            tlpCharts.Dock = DockStyle.Top;
+            tlpCharts.Location = new Point(16, 176);
+            tlpCharts.Name = "tlpCharts";
+            tlpCharts.RowCount = 1;
+            tlpCharts.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpCharts.Size = new Size(1028, 290);
+            tlpCharts.TabIndex = 2;
+            // 
+            // cardChartStatus
+            // 
+            cardChartStatus.BackColor = Color.White;
+            cardChartStatus.Controls.Add(pnlChartStatus);
+            cardChartStatus.Controls.Add(lblChartStatusTitle);
+            cardChartStatus.Dock = DockStyle.Fill;
+            cardChartStatus.Location = new Point(0, 8);
+            cardChartStatus.Margin = new Padding(0, 8, 6, 8);
+            cardChartStatus.Name = "cardChartStatus";
+            cardChartStatus.Size = new Size(508, 274);
+            cardChartStatus.TabIndex = 0;
+            // 
+            // pnlChartStatus
+            // 
+            pnlChartStatus.BackColor = Color.White;
+            pnlChartStatus.Dock = DockStyle.Fill;
+            pnlChartStatus.Location = new Point(0, 38);
+            pnlChartStatus.Name = "pnlChartStatus";
+            pnlChartStatus.Size = new Size(508, 236);
+            pnlChartStatus.TabIndex = 1;
+            // 
+            // lblChartStatusTitle
+            // 
+            lblChartStatusTitle.Dock = DockStyle.Top;
+            lblChartStatusTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblChartStatusTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblChartStatusTitle.Location = new Point(0, 0);
+            lblChartStatusTitle.Name = "lblChartStatusTitle";
+            lblChartStatusTitle.Padding = new Padding(12, 10, 0, 0);
+            lblChartStatusTitle.Size = new Size(508, 38);
+            lblChartStatusTitle.TabIndex = 0;
+            lblChartStatusTitle.Text = "Complaints by Status";
+            // 
+            // cardChartCategory
+            // 
+            cardChartCategory.BackColor = Color.White;
+            cardChartCategory.Controls.Add(pnlChartCategory);
+            cardChartCategory.Controls.Add(lblChartCategoryTitle);
+            cardChartCategory.Dock = DockStyle.Fill;
+            cardChartCategory.Location = new Point(520, 8);
+            cardChartCategory.Margin = new Padding(6, 8, 0, 8);
+            cardChartCategory.Name = "cardChartCategory";
+            cardChartCategory.Size = new Size(508, 274);
+            cardChartCategory.TabIndex = 1;
+            // 
+            // pnlChartCategory
+            // 
+            pnlChartCategory.BackColor = Color.White;
+            pnlChartCategory.Dock = DockStyle.Fill;
+            pnlChartCategory.Location = new Point(0, 38);
+            pnlChartCategory.Name = "pnlChartCategory";
+            pnlChartCategory.Size = new Size(508, 236);
+            pnlChartCategory.TabIndex = 1;
+            // 
+            // lblChartCategoryTitle
+            // 
+            lblChartCategoryTitle.Dock = DockStyle.Top;
+            lblChartCategoryTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblChartCategoryTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblChartCategoryTitle.Location = new Point(0, 0);
+            lblChartCategoryTitle.Name = "lblChartCategoryTitle";
+            lblChartCategoryTitle.Padding = new Padding(12, 10, 0, 0);
+            lblChartCategoryTitle.Size = new Size(508, 38);
+            lblChartCategoryTitle.TabIndex = 0;
+            lblChartCategoryTitle.Text = "Complaints by Category";
+            // 
+            // tlpCards
+            // 
+            tlpCards.ColumnCount = 4;
+            tlpCards.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpCards.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpCards.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpCards.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpCards.Controls.Add(cardTotal, 0, 0);
+            tlpCards.Controls.Add(cardOpen, 1, 0);
+            tlpCards.Controls.Add(cardInProgress, 2, 0);
+            tlpCards.Controls.Add(cardResolved, 3, 0);
+            tlpCards.Dock = DockStyle.Top;
+            tlpCards.Location = new Point(16, 56);
+            tlpCards.Margin = new Padding(0);
+            tlpCards.Name = "tlpCards";
+            tlpCards.RowCount = 1;
+            tlpCards.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpCards.Size = new Size(1028, 120);
+            tlpCards.TabIndex = 1;
+            // 
+            // cardTotal
+            // 
+            cardTotal.BackColor = Color.White;
+            cardTotal.Controls.Add(lblValTotal);
+            cardTotal.Controls.Add(lblCapTotal);
+            cardTotal.Controls.Add(pnlAccentTotal);
+            cardTotal.Dock = DockStyle.Fill;
+            cardTotal.Location = new Point(0, 8);
+            cardTotal.Margin = new Padding(0, 8, 6, 8);
+            cardTotal.Name = "cardTotal";
+            cardTotal.Size = new Size(251, 104);
+            cardTotal.TabIndex = 0;
+            // 
+            // lblValTotal
+            // 
+            lblValTotal.AutoSize = true;
+            lblValTotal.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblValTotal.ForeColor = Color.FromArgb(15, 23, 42);
+            lblValTotal.Location = new Point(18, 42);
+            lblValTotal.Name = "lblValTotal";
+            lblValTotal.Size = new Size(46, 54);
+            lblValTotal.TabIndex = 2;
+            lblValTotal.Text = "0";
+            // 
+            // lblCapTotal
+            // 
+            lblCapTotal.AutoSize = true;
+            lblCapTotal.ForeColor = Color.FromArgb(100, 116, 139);
+            lblCapTotal.Location = new Point(22, 18);
+            lblCapTotal.Name = "lblCapTotal";
+            lblCapTotal.Size = new Size(134, 23);
+            lblCapTotal.TabIndex = 1;
+            lblCapTotal.Text = "Total complaints";
+            // 
+            // pnlAccentTotal
+            // 
+            pnlAccentTotal.BackColor = Color.FromArgb(37, 99, 235);
+            pnlAccentTotal.Dock = DockStyle.Left;
+            pnlAccentTotal.Location = new Point(0, 0);
+            pnlAccentTotal.Name = "pnlAccentTotal";
+            pnlAccentTotal.Size = new Size(6, 104);
+            pnlAccentTotal.TabIndex = 0;
+            // 
+            // cardOpen
+            // 
+            cardOpen.BackColor = Color.White;
+            cardOpen.Controls.Add(lblValOpen);
+            cardOpen.Controls.Add(lblCapOpen);
+            cardOpen.Controls.Add(pnlAccentOpen);
+            cardOpen.Dock = DockStyle.Fill;
+            cardOpen.Location = new Point(263, 8);
+            cardOpen.Margin = new Padding(6, 8, 6, 8);
+            cardOpen.Name = "cardOpen";
+            cardOpen.Size = new Size(245, 104);
+            cardOpen.TabIndex = 1;
+            // 
+            // lblValOpen
+            // 
+            lblValOpen.AutoSize = true;
+            lblValOpen.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblValOpen.ForeColor = Color.FromArgb(15, 23, 42);
+            lblValOpen.Location = new Point(18, 42);
+            lblValOpen.Name = "lblValOpen";
+            lblValOpen.Size = new Size(46, 54);
+            lblValOpen.TabIndex = 2;
+            lblValOpen.Text = "0";
+            // 
+            // lblCapOpen
+            // 
+            lblCapOpen.AutoSize = true;
+            lblCapOpen.ForeColor = Color.FromArgb(100, 116, 139);
+            lblCapOpen.Location = new Point(22, 18);
+            lblCapOpen.Name = "lblCapOpen";
+            lblCapOpen.Size = new Size(103, 23);
+            lblCapOpen.TabIndex = 1;
+            lblCapOpen.Text = "Open / New";
+            // 
+            // pnlAccentOpen
+            // 
+            pnlAccentOpen.BackColor = Color.FromArgb(217, 119, 6);
+            pnlAccentOpen.Dock = DockStyle.Left;
+            pnlAccentOpen.Location = new Point(0, 0);
+            pnlAccentOpen.Name = "pnlAccentOpen";
+            pnlAccentOpen.Size = new Size(6, 104);
+            pnlAccentOpen.TabIndex = 0;
+            // 
+            // cardInProgress
+            // 
+            cardInProgress.BackColor = Color.White;
+            cardInProgress.Controls.Add(lblValInProgress);
+            cardInProgress.Controls.Add(lblCapInProgress);
+            cardInProgress.Controls.Add(pnlAccentInProgress);
+            cardInProgress.Dock = DockStyle.Fill;
+            cardInProgress.Location = new Point(520, 8);
+            cardInProgress.Margin = new Padding(6, 8, 6, 8);
+            cardInProgress.Name = "cardInProgress";
+            cardInProgress.Size = new Size(245, 104);
+            cardInProgress.TabIndex = 2;
+            // 
+            // lblValInProgress
+            // 
+            lblValInProgress.AutoSize = true;
+            lblValInProgress.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblValInProgress.ForeColor = Color.FromArgb(15, 23, 42);
+            lblValInProgress.Location = new Point(18, 42);
+            lblValInProgress.Name = "lblValInProgress";
+            lblValInProgress.Size = new Size(46, 54);
+            lblValInProgress.TabIndex = 2;
+            lblValInProgress.Text = "0";
+            // 
+            // lblCapInProgress
+            // 
+            lblCapInProgress.AutoSize = true;
+            lblCapInProgress.ForeColor = Color.FromArgb(100, 116, 139);
+            lblCapInProgress.Location = new Point(22, 18);
+            lblCapInProgress.Name = "lblCapInProgress";
+            lblCapInProgress.Size = new Size(95, 23);
+            lblCapInProgress.TabIndex = 1;
+            lblCapInProgress.Text = "In progress";
+            // 
+            // pnlAccentInProgress
+            // 
+            pnlAccentInProgress.BackColor = Color.FromArgb(124, 58, 237);
+            pnlAccentInProgress.Dock = DockStyle.Left;
+            pnlAccentInProgress.Location = new Point(0, 0);
+            pnlAccentInProgress.Name = "pnlAccentInProgress";
+            pnlAccentInProgress.Size = new Size(6, 104);
+            pnlAccentInProgress.TabIndex = 0;
+            // 
+            // cardResolved
+            // 
+            cardResolved.BackColor = Color.White;
+            cardResolved.Controls.Add(lblValResolved);
+            cardResolved.Controls.Add(lblCapResolved);
+            cardResolved.Controls.Add(pnlAccentResolved);
+            cardResolved.Dock = DockStyle.Fill;
+            cardResolved.Location = new Point(777, 8);
+            cardResolved.Margin = new Padding(6, 8, 0, 8);
+            cardResolved.Name = "cardResolved";
+            cardResolved.Size = new Size(251, 104);
+            cardResolved.TabIndex = 3;
+            // 
+            // lblValResolved
+            // 
+            lblValResolved.AutoSize = true;
+            lblValResolved.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblValResolved.ForeColor = Color.FromArgb(15, 23, 42);
+            lblValResolved.Location = new Point(18, 42);
+            lblValResolved.Name = "lblValResolved";
+            lblValResolved.Size = new Size(46, 54);
+            lblValResolved.TabIndex = 2;
+            lblValResolved.Text = "0";
+            // 
+            // lblCapResolved
+            // 
+            lblCapResolved.AutoSize = true;
+            lblCapResolved.ForeColor = Color.FromArgb(100, 116, 139);
+            lblCapResolved.Location = new Point(22, 18);
+            lblCapResolved.Name = "lblCapResolved";
+            lblCapResolved.Size = new Size(77, 23);
+            lblCapResolved.TabIndex = 1;
+            lblCapResolved.Text = "Resolved";
+            // 
+            // pnlAccentResolved
+            // 
+            pnlAccentResolved.BackColor = Color.FromArgb(22, 163, 74);
+            pnlAccentResolved.Dock = DockStyle.Left;
+            pnlAccentResolved.Location = new Point(0, 0);
+            pnlAccentResolved.Name = "pnlAccentResolved";
+            pnlAccentResolved.Size = new Size(6, 104);
+            pnlAccentResolved.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Dock = DockStyle.Top;
+            lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblTitle.Location = new Point(16, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Padding = new Padding(4, 14, 0, 0);
+            lblTitle.Size = new Size(1028, 56);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Admin Dashboard";
+            lblTitle.UseMnemonic = false;
+            // 
+            // lblSideTitle
+            // 
+            lblSideTitle.BackColor = Color.Transparent;
+            lblSideTitle.Font = new Font("Segoe UI", 10.5F);
+            lblSideTitle.ForeColor = Color.White;
+            lblSideTitle.Location = new Point(0, 40);
+            lblSideTitle.Name = "lblSideTitle";
+            lblSideTitle.Size = new Size(220, 40);
+            lblSideTitle.TabIndex = 0;
+            lblSideTitle.Text = "Student Complaints";
+            lblSideTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnDashboard
+            // 
+            btnDashboard.BackColor = Color.FromArgb(20, 26, 90);
+            btnDashboard.Cursor = Cursors.Hand;
+            btnDashboard.FlatAppearance.BorderColor = Color.FromArgb(190, 198, 230);
+            btnDashboard.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 52, 140);
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.Font = new Font("Segoe UI", 10F);
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Location = new Point(20, 151);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(180, 40);
+            btnDashboard.TabIndex = 1;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = false;
+            // 
+            // btnAdminDashboard
+            // 
+            btnAdminDashboard.BackColor = Color.FromArgb(20, 26, 90);
+            btnAdminDashboard.Cursor = Cursors.Hand;
+            btnAdminDashboard.FlatAppearance.BorderColor = Color.White;
+            btnAdminDashboard.FlatAppearance.BorderSize = 2;
+            btnAdminDashboard.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 52, 140);
+            btnAdminDashboard.FlatStyle = FlatStyle.Flat;
+            btnAdminDashboard.Font = new Font("Segoe UI", 10F);
+            btnAdminDashboard.ForeColor = Color.White;
+            btnAdminDashboard.Location = new Point(20, 222);
+            btnAdminDashboard.Name = "btnAdminDashboard";
+            btnAdminDashboard.Size = new Size(180, 40);
+            btnAdminDashboard.TabIndex = 4;
+            btnAdminDashboard.Text = "Admin Dashboard";
+            btnAdminDashboard.UseVisualStyleBackColor = false;
+            // 
+            // btnManageComplaints
+            // 
+            btnManageComplaints.BackColor = Color.FromArgb(20, 26, 90);
+            btnManageComplaints.Cursor = Cursors.Hand;
+            btnManageComplaints.FlatAppearance.BorderColor = Color.FromArgb(190, 198, 230);
+            btnManageComplaints.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 52, 140);
+            btnManageComplaints.FlatStyle = FlatStyle.Flat;
+            btnManageComplaints.Font = new Font("Segoe UI", 10F);
+            btnManageComplaints.ForeColor = Color.White;
+            btnManageComplaints.Location = new Point(20, 289);
+            btnManageComplaints.Name = "btnManageComplaints";
+            btnManageComplaints.Size = new Size(180, 40);
+            btnManageComplaints.TabIndex = 5;
+            btnManageComplaints.Text = "Manage Complaints";
+            btnManageComplaints.UseVisualStyleBackColor = false;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnLogout.BackColor = Color.FromArgb(36, 52, 145);
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.FlatAppearance.BorderColor = Color.FromArgb(190, 198, 230);
+            btnLogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 52, 140);
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 10F);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(20, 696);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(180, 40);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // pnlSidebar
+            // 
+            pnlSidebar.BackColor = Color.FromArgb(22, 30, 100);
+            pnlSidebar.Controls.Add(btnLogout);
+            pnlSidebar.Controls.Add(btnManageComplaints);
+            pnlSidebar.Controls.Add(btnAdminDashboard);
+            pnlSidebar.Controls.Add(btnDashboard);
+            pnlSidebar.Controls.Add(lblSideTitle);
+            pnlSidebar.Dock = DockStyle.Left;
+            pnlSidebar.Location = new Point(0, 0);
+            pnlSidebar.Name = "pnlSidebar";
+            pnlSidebar.Size = new Size(220, 760);
+            pnlSidebar.TabIndex = 0;
+            pnlSidebar.Paint += pnlSidebar_Paint;
+            pnlSidebar.Resize += pnlSidebar_Resize;
             // 
             // AdminDashboardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(241, 245, 249);
-            this.ClientSize = new System.Drawing.Size(1280, 760);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.MinimumSize = new System.Drawing.Size(1100, 680);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin Dashboard - Student Complaint Tracking System";
-            this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlSidebar);
-            this.Name = "AdminDashboardForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecent)).EndInit();
-            this.pnlRecent.ResumeLayout(false);
-            this.pnlRecent.PerformLayout();
-            this.pnlRecentWrap.ResumeLayout(false);
-            this.pnlRecentWrap.PerformLayout();
-            this.pnlChartCategory.ResumeLayout(false);
-            this.pnlChartCategory.PerformLayout();
-            this.cardChartCategory.ResumeLayout(false);
-            this.cardChartCategory.PerformLayout();
-            this.pnlChartStatus.ResumeLayout(false);
-            this.pnlChartStatus.PerformLayout();
-            this.cardChartStatus.ResumeLayout(false);
-            this.cardChartStatus.PerformLayout();
-            this.tlpCharts.ResumeLayout(false);
-            this.tlpCharts.PerformLayout();
-            this.pnlAccentResolved.ResumeLayout(false);
-            this.pnlAccentResolved.PerformLayout();
-            this.cardResolved.ResumeLayout(false);
-            this.cardResolved.PerformLayout();
-            this.pnlAccentInProgress.ResumeLayout(false);
-            this.pnlAccentInProgress.PerformLayout();
-            this.cardInProgress.ResumeLayout(false);
-            this.cardInProgress.PerformLayout();
-            this.pnlAccentOpen.ResumeLayout(false);
-            this.pnlAccentOpen.PerformLayout();
-            this.cardOpen.ResumeLayout(false);
-            this.cardOpen.PerformLayout();
-            this.pnlAccentTotal.ResumeLayout(false);
-            this.pnlAccentTotal.PerformLayout();
-            this.cardTotal.ResumeLayout(false);
-            this.cardTotal.PerformLayout();
-            this.tlpCards.ResumeLayout(false);
-            this.tlpCards.PerformLayout();
-            this.pnlContent.ResumeLayout(false);
-            this.pnlContent.PerformLayout();
-            this.pnlSidebar.ResumeLayout(false);
-            this.pnlSidebar.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            BackColor = Color.FromArgb(241, 245, 249);
+            ClientSize = new Size(1280, 760);
+            Controls.Add(pnlContent);
+            Controls.Add(pnlSidebar);
+            Font = new Font("Segoe UI", 9.75F);
+            MinimumSize = new Size(1100, 680);
+            Name = "AdminDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Admin Dashboard - Student Complaint Tracking System";
+            pnlContent.ResumeLayout(false);
+            pnlRecentWrap.ResumeLayout(false);
+            pnlRecent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRecent).EndInit();
+            tlpCharts.ResumeLayout(false);
+            cardChartStatus.ResumeLayout(false);
+            cardChartCategory.ResumeLayout(false);
+            tlpCards.ResumeLayout(false);
+            cardTotal.ResumeLayout(false);
+            cardTotal.PerformLayout();
+            cardOpen.ResumeLayout(false);
+            cardOpen.PerformLayout();
+            cardInProgress.ResumeLayout(false);
+            cardInProgress.PerformLayout();
+            cardResolved.ResumeLayout(false);
+            cardResolved.PerformLayout();
+            pnlSidebar.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
