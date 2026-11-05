@@ -30,13 +30,20 @@
         {
             pnlSidebar = new Panel();
             button4 = new Button();
-            button3 = new Button();
-            bnbadmindashboard = new Button();
             btnMyComplaints = new Button();
             button2 = new Button();
             button1 = new Button();
             lblAppTitle = new Label();
             pnlMainContent = new Panel();
+            panel3 = new Panel();
+            label6 = new Label();
+            label3 = new Label();
+            panel2 = new Panel();
+            label5 = new Label();
+            label2 = new Label();
+            panel1 = new Panel();
+            label4 = new Label();
+            label1 = new Label();
             lblRecentComplaints = new Label();
             dgvRecentComplaints = new DataGridView();
             ComplaintID = new DataGridViewTextBoxColumn();
@@ -44,14 +51,15 @@
             Category = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
             pnlHeader = new Panel();
             lblHeaderSubtitle = new Label();
             lblWelcome = new Label();
             pnlSidebar.SuspendLayout();
             pnlMainContent.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRecentComplaints).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,8 +68,6 @@
             pnlSidebar.BackColor = Color.MidnightBlue;
             pnlSidebar.BackgroundImageLayout = ImageLayout.Zoom;
             pnlSidebar.Controls.Add(button4);
-            pnlSidebar.Controls.Add(button3);
-            pnlSidebar.Controls.Add(bnbadmindashboard);
             pnlSidebar.Controls.Add(btnMyComplaints);
             pnlSidebar.Controls.Add(button2);
             pnlSidebar.Controls.Add(button1);
@@ -86,34 +92,6 @@
             button4.TabIndex = 13;
             button4.Text = "Logout";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.DarkSlateBlue;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 10F);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(20, 379);
-            button3.Name = "button3";
-            button3.Size = new Size(179, 40);
-            button3.TabIndex = 12;
-            button3.Text = "Manage Complaints";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // bnbadmindashboard
-            // 
-            bnbadmindashboard.BackColor = Color.DarkSlateBlue;
-            bnbadmindashboard.Cursor = Cursors.Hand;
-            bnbadmindashboard.FlatStyle = FlatStyle.Flat;
-            bnbadmindashboard.Font = new Font("Segoe UI", 10F);
-            bnbadmindashboard.ForeColor = Color.White;
-            bnbadmindashboard.Location = new Point(20, 314);
-            bnbadmindashboard.Name = "bnbadmindashboard";
-            bnbadmindashboard.Size = new Size(179, 40);
-            bnbadmindashboard.TabIndex = 11;
-            bnbadmindashboard.Text = "Admin Dashboad";
-            bnbadmindashboard.UseVisualStyleBackColor = false;
             // 
             // btnMyComplaints
             // 
@@ -172,9 +150,11 @@
             // pnlMainContent
             // 
             pnlMainContent.BackColor = Color.FromArgb(224, 224, 224);
+            pnlMainContent.Controls.Add(panel3);
+            pnlMainContent.Controls.Add(panel2);
+            pnlMainContent.Controls.Add(panel1);
             pnlMainContent.Controls.Add(lblRecentComplaints);
             pnlMainContent.Controls.Add(dgvRecentComplaints);
-            pnlMainContent.Controls.Add(pictureBox1);
             pnlMainContent.Controls.Add(pnlHeader);
             pnlMainContent.Dock = DockStyle.Fill;
             pnlMainContent.Location = new Point(230, 0);
@@ -182,16 +162,120 @@
             pnlMainContent.Size = new Size(854, 661);
             pnlMainContent.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            //pictureBox1.Image = Properties.Resources.Monthly_Complaints_Trend_Chart;
+            //pictureBox1.Location = new Point(30, 436);
+            //pictureBox1.Name = "pictureBox1";
+            //pictureBox1.Size = new Size(701, 213);
+            //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            //pictureBox1.TabIndex = 9;
+            //pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Ivory;
+            panel3.BackgroundImageLayout = ImageLayout.None;
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(label3);
+            panel3.Location = new Point(541, 120);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(136, 100);
+            panel3.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label6.Location = new Point(3, 16);
+            label6.Name = "label6";
+            label6.Size = new Size(119, 20);
+            label6.TabIndex = 3;
+            label6.Text = "Total complains";
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label3.Location = new Point(93, 37);
+            label3.Name = "label3";
+            label3.Size = new Size(36, 46);
+            label3.TabIndex = 1;
+            label3.Text = "9";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Ivory;
+            panel2.BackgroundImageLayout = ImageLayout.None;
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(302, 120);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(136, 100);
+            panel2.TabIndex = 7;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label5.Location = new Point(15, 16);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 20);
+            label5.TabIndex = 2;
+            label5.Text = "Pending...";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label2.Location = new Point(93, 37);
+            label2.Name = "label2";
+            label2.Size = new Size(36, 46);
+            label2.TabIndex = 1;
+            label2.Text = "5";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Ivory;
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(83, 120);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(136, 100);
+            panel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label4.Location = new Point(12, 16);
+            label4.Name = "label4";
+            label4.Size = new Size(72, 20);
+            label4.TabIndex = 1;
+            label4.Text = "Resolved";
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            label1.Location = new Point(81, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(36, 46);
+            label1.TabIndex = 0;
+            label1.Text = "7";
+            // 
             // lblRecentComplaints
             // 
             lblRecentComplaints.AutoSize = true;
             lblRecentComplaints.Font = new Font("Segoe UI", 14F);
             lblRecentComplaints.ForeColor = Color.Gray;
-            lblRecentComplaints.Location = new Point(41, 263);
+            lblRecentComplaints.Location = new Point(41, 235);
             lblRecentComplaints.Name = "lblRecentComplaints";
             lblRecentComplaints.Size = new Size(168, 25);
             lblRecentComplaints.TabIndex = 3;
             lblRecentComplaints.Text = "Recent Complaints";
+            lblRecentComplaints.Click += lblRecentComplaints_Click;
             // 
             // dgvRecentComplaints
             // 
@@ -204,7 +288,7 @@
             dgvRecentComplaints.Columns.AddRange(new DataGridViewColumn[] { ComplaintID, Title, Category, Date, Status });
             dgvRecentComplaints.EnableHeadersVisualStyles = false;
             dgvRecentComplaints.GridColor = Color.Gainsboro;
-            dgvRecentComplaints.Location = new Point(41, 314);
+            dgvRecentComplaints.Location = new Point(41, 269);
             dgvRecentComplaints.MultiSelect = false;
             dgvRecentComplaints.Name = "dgvRecentComplaints";
             dgvRecentComplaints.ReadOnly = true;
@@ -243,15 +327,6 @@
             Status.HeaderText = "Status";
             Status.Name = "Status";
             Status.ReadOnly = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2026_11_01_at_10_53_28_PM;
-            pictureBox1.Location = new Point(41, 110);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(690, 121);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // pnlHeader
             // 
@@ -299,8 +374,13 @@
             pnlSidebar.ResumeLayout(false);
             pnlMainContent.ResumeLayout(false);
             pnlMainContent.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRecentComplaints).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
             ResumeLayout(false);
@@ -314,7 +394,6 @@
         private Panel pnlHeader;
         private Label lblHeaderSubtitle;
         private Label lblWelcome;
-        private PictureBox pictureBox1;
         private DataGridView dgvRecentComplaints;
         private Label lblRecentComplaints;
         private DataGridViewTextBoxColumn ComplaintID;
@@ -325,8 +404,15 @@
         private Button btnMyComplaints;
         private Button button2;
         private Button button1;
-        private Button bnbadmindashboard;
-        private Button button3;
         private Button button4;
+        private Panel panel1;
+        private Panel panel3;
+        private Panel panel2;
+        private Label label1;
+        private Label label3;
+        private Label label2;
+        private Label label6;
+        private Label label5;
+        private Label label4;
     }
 }

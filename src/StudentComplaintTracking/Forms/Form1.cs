@@ -54,5 +54,15 @@ namespace Student_Dashboard
         {
 
         }
+
+        private void bnbadmindashboard_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblRecentComplaints_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
