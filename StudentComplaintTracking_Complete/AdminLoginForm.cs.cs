@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using StudentComplaintTracking.Gdi;
 
 namespace WinFormsApp1
 {
@@ -14,6 +15,26 @@ namespace WinFormsApp1
         public AdminLoginForm()
         {
             InitializeComponent();
+            SetupGraphics();
+        }
+
+        // ───────────── GDI+ / Graphics / Visualization ─────────────
+
+        /// <summary>Gradient window background, soft shadow and a gradient accent line on the login card.</summary>
+        private void SetupGraphics()
+        {
+            GdiHelpers.EnableDoubleBuffering(this);
+
+            Paint += (s, e) =>
+            {
+                GdiHelpers.FillGradient(e.Graphics, ClientRectangle);
+                GdiHelpers.DrawShadow(e.Graphics, pnlAdminLogin.Bounds, 8, 5);
+            };
+            Resize += (s, e) => Invalidate();
+
+            pnlAdminLogin.Paint += (s, e) =>
+                GdiHelpers.FillGradient(e.Graphics, new Rectangle(0, 0, pnlAdminLogin.ClientSize.Width, 4),
+                                        System.Drawing.Drawing2D.LinearGradientMode.Horizontal);
         }
         public AdminLoginForm(LoginForm previousPage) : this()
         {

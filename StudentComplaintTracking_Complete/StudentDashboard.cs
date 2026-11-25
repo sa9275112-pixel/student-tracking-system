@@ -1,5 +1,6 @@
 using StudentComplaints;
 using StudentComplaintTracking.Forms;
+using StudentComplaintTracking.Gdi;
 namespace Student_Dashboard
 {
     public partial class StudentDashboard : Form
@@ -27,6 +28,63 @@ namespace Student_Dashboard
             dgvRecentComplaints.Rows.Add(
                 "C004", "Lecture Schedule", "Academic", "25/10/2026", "Resolved");
 
+            SetupGraphics();
+        }
+
+        // ───────────── GDI+ / Graphics / Visualization ─────────────
+
+        /// <summary>
+        /// Card icons and color accents, a "% resolved" progress ring,
+        /// colored status badges in the table and flicker-free redraws.
+        /// The sidebar gradient is drawn in panel1_Paint (already connected to pnlSidebar).
+        /// </summary>
+        private void SetupGraphics()
+        {
+            GdiHelpers.EnableDoubleBuffering(pnlSidebar);
+            GdiHelpers.EnableDoubleBuffering(pnlMainContent);
+            GdiHelpers.RedrawOnResize(pnlSidebar);
+
+            // Summary cards: colored top strip + icon (matches the design reference image)
+            panel1.Paint += (s, e) => PaintCard(e.Graphics, panel1, GdiHelpers.StatusColor("Resolved"), GdiHelpers.DrawCheckCircleIcon);
+            panel2.Paint += (s, e) => PaintCard(e.Graphics, panel2, GdiHelpers.StatusColor("Pending"), GdiHelpers.DrawClockIcon);
+            panel3.Paint += (s, e) => PaintCard(e.Graphics, panel3, GdiHelpers.Blue, GdiHelpers.DrawStackIcon);
+
+            GdiHelpers.AttachBadges(dgvRecentComplaints, Status.Name, GdiHelpers.StatusColor);
+
+            pnlMainContent.Paint += pnlMainContent_Paint;
+            dgvRecentComplaints.RowsAdded += (s, e) => pnlMainContent.Invalidate(RingBounds());
+            dgvRecentComplaints.RowsRemoved += (s, e) => pnlMainContent.Invalidate(RingBounds());
+            dgvRecentComplaints.CellValueChanged += (s, e) => pnlMainContent.Invalidate(RingBounds());
+        }
+
+        private delegate void IconPainter(Graphics g, Rectangle r, Color color);
+
+        /// <summary>Colored strip on top of a card and an icon in its bottom-left corner.</summary>
+        private static void PaintCard(Graphics g, Panel card, Color color, IconPainter drawIcon)
+        {
+            GdiHelpers.HighQuality(g);
+            using (var strip = new SolidBrush(color))
+                g.FillRectangle(strip, 0, 0, card.ClientSize.Width, 4);
+
+            var icon = new Rectangle(10, card.ClientSize.Height - 30, 20, 20);
+            drawIcon(g, icon, color);
+        }
+
+        /// <summary>Where the progress ring sits: the free space right of the three cards.</summary>
+        private Rectangle RingBounds() => new Rectangle(720, 118, 88, 88);
+
+        /// <summary>Progress ring: share of the recent complaints that are resolved.</summary>
+        private void pnlMainContent_Paint(object? sender, PaintEventArgs e)
+        {
+            var rows = dgvRecentComplaints.Rows.Cast<DataGridViewRow>().Where(r => !r.IsNewRow).ToList();
+            if (rows.Count == 0) return;
+
+            int resolved = rows.Count(r =>
+                string.Equals(r.Cells[Status.Index].Value?.ToString(), "Resolved", StringComparison.OrdinalIgnoreCase));
+
+            using var captionFont = new Font("Segoe UI", 8.5F);
+            GdiHelpers.DrawProgressRing(e.Graphics, RingBounds(), resolved / (float)rows.Count,
+                GdiHelpers.StatusColor("Resolved"), resolved + " of " + rows.Count + " resolved", captionFont);
         }
 
 
@@ -87,9 +145,11 @@ namespace Student_Dashboard
 
         }
 
+        // Connected to pnlSidebar in the Designer: paints the sidebar gradient.
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            if (sender is Control sidebar)
+                GdiHelpers.FillGradient(e.Graphics, sidebar.ClientRectangle);
         }
 
         private void btnNewComplaint_Click(object sender, EventArgs e)

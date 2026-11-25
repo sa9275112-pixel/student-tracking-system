@@ -1,3 +1,5 @@
+using StudentComplaintTracking.Gdi;
+
 namespace StudentComplaintTracking.Forms
 {
     /// <summary>
@@ -22,6 +24,50 @@ namespace StudentComplaintTracking.Forms
             cboAssignTo.SelectedIndex = 0;
             cboNewPriority.SelectedIndex = 1; // Medium
             LoadSampleRows();
+            SetupGraphics();
+        }
+
+        // ───────────── GDI+ / Graphics / Visualization ─────────────
+
+        /// <summary>
+        /// Colored Status / Priority badges in the table, a status-colored marker next to
+        /// the selected complaint, flicker-free redraws and Ctrl+P print preview.
+        /// </summary>
+        private void SetupGraphics()
+        {
+            GdiHelpers.EnableDoubleBuffering(pnlSidebar);
+            GdiHelpers.EnableDoubleBuffering(pnlUpdate);
+
+            GdiHelpers.AttachBadges(dgvComplaints, colStatus.Name, GdiHelpers.StatusColor);
+            GdiHelpers.AttachBadges(dgvComplaints, colPriority.Name, GdiHelpers.PriorityColor);
+
+            pnlUpdate.Paint += pnlUpdate_Paint;
+            dgvComplaints.SelectionChanged += (s, e) => pnlUpdate.Invalidate();
+
+            KeyPreview = true;
+            KeyDown += (s, e) =>
+            {
+                if (e.Control && e.KeyCode == Keys.P)
+                {
+                    e.SuppressKeyPress = true;
+                    GdiHelpers.ShowPrintPreview(this, "All Complaints", dgvComplaints);
+                }
+            };
+        }
+
+        /// <summary>
+        /// Draws a rounded bar in the selected complaint's status color,
+        /// just left of the "Selected complaint" text.
+        /// </summary>
+        private void pnlUpdate_Paint(object? sender, PaintEventArgs e)
+        {
+            var row = dgvComplaints.CurrentRow;
+            if (row == null) return;
+
+            string status = row.Cells[colStatus.Index].Value?.ToString() ?? "";
+            var bar = new Rectangle(lblSelected.Left - 9, lblSelected.Top, 5, lblSelected.Height);
+            GdiHelpers.HighQuality(e.Graphics);
+            GdiHelpers.FillRounded(e.Graphics, bar, 2, GdiHelpers.StatusColor(status));
         }
 
         private void pnlSidebar_Paint(object sender, PaintEventArgs e)

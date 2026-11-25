@@ -1,6 +1,8 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Student_Dashboard;
+using StudentComplaintTracking.Gdi;
 
 namespace StudentComplaints
 {
@@ -19,6 +21,79 @@ namespace StudentComplaints
             // TODO: replace with the logged-in student's real data
             txtStudentName.Text = "Ahmed Hassan";
             txtStudentId.Text = "S1001";
+
+            SetupGraphics();
+        }
+
+        // ───────────── GDI+ / Graphics / Visualization ─────────────
+
+        /// <summary>True after Submit was pressed with missing fields: red outlines are drawn.</summary>
+        private bool _showValidation;
+
+        /// <summary>
+        /// Sidebar gradient, shadow under the form card, red outlines around missing
+        /// required fields, and colored priority dots in the Priority dropdown.
+        /// </summary>
+        private void SetupGraphics()
+        {
+            GdiHelpers.AttachSidebarGradient(pnlSidebar);
+            GdiHelpers.EnableDoubleBuffering(pnlContent);
+            GdiHelpers.EnableDoubleBuffering(pnlCard);
+
+            pnlCard.Paint += pnlCard_Paint;
+
+            // Runs after the existing Submit/Clear handlers (handlers fire in the order they were added)
+            btnSubmitComplaint.Click += (s, e) => { _showValidation = lblError.Visible; pnlCard.Invalidate(); };
+            btnClear.Click += (s, e) => { _showValidation = false; pnlCard.Invalidate(); };
+
+            // Remove a field's red outline as soon as it is filled in
+            txtTitle.TextChanged += (s, e) => pnlCard.Invalidate();
+            txtDescription.TextChanged += (s, e) => pnlCard.Invalidate();
+            cmbCategory.SelectedIndexChanged += (s, e) => pnlCard.Invalidate();
+            cmbPriority.SelectedIndexChanged += (s, e) => pnlCard.Invalidate();
+
+            // Priority dropdown: we draw each item ourselves (colored dot + text)
+            cmbPriority.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbPriority.DrawItem += cmbPriority_DrawItem;
+        }
+
+        /// <summary>Red rounded outline around every required field that is still empty.</summary>
+        private void pnlCard_Paint(object? sender, PaintEventArgs e)
+        {
+            if (!_showValidation) return;
+
+            var missing = new System.Collections.Generic.List<Control>();
+            if (string.IsNullOrWhiteSpace(txtTitle.Text)) missing.Add(txtTitle);
+            if (cmbCategory.SelectedIndex < 0) missing.Add(cmbCategory);
+            if (cmbPriority.SelectedIndex < 0) missing.Add(cmbPriority);
+            if (string.IsNullOrWhiteSpace(txtDescription.Text)) missing.Add(txtDescription);
+
+            GdiHelpers.HighQuality(e.Graphics);
+            var red = Color.FromArgb(198, 40, 40);
+            foreach (var field in missing)
+            {
+                var outline = Rectangle.Inflate(field.Bounds, 3, 3);
+                GdiHelpers.DrawRounded(e.Graphics, outline, 4, red, 2f);
+            }
+        }
+
+        /// <summary>Draws a Priority item: colored dot (Low green … Urgent red) followed by the text.</summary>
+        private void cmbPriority_DrawItem(object? sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            if (e.Index < 0) return;
+
+            string text = cmbPriority.Items[e.Index]?.ToString() ?? "";
+            GdiHelpers.HighQuality(e.Graphics);
+
+            int dot = Math.Max(8, e.Bounds.Height / 2 - 2);
+            using (var brush = new SolidBrush(GdiHelpers.PriorityColor(text)))
+                e.Graphics.FillEllipse(brush, e.Bounds.X + 6, e.Bounds.Y + (e.Bounds.Height - dot) / 2, dot, dot);
+
+            var textRect = new Rectangle(e.Bounds.X + dot + 14, e.Bounds.Y, e.Bounds.Width - dot - 14, e.Bounds.Height);
+            TextRenderer.DrawText(e.Graphics, text, e.Font ?? cmbPriority.Font, textRect, e.ForeColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
+            e.DrawFocusRectangle();
         }
 
         // ---------- Submit logic ----------
@@ -119,9 +194,10 @@ namespace StudentComplaints
             _dashboardForm.Hide();
         }
 
+        // Soft shadow under the white form card
         private void pnlContent_Paint(object sender, PaintEventArgs e)
         {
-
+            GdiHelpers.DrawShadow(e.Graphics, pnlCard.Bounds);
         }
     }
 }

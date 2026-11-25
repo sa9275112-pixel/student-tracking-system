@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Student_Dashboard;
 using StudentComplaints;
+using StudentComplaintTracking.Gdi;
 
 namespace StudentComplaintTracking.Forms
 {
@@ -25,6 +26,48 @@ namespace StudentComplaintTracking.Forms
             button1.Click += (sender, e) => _dashboardForm.ShowDashboard();
             button2.Click += (sender, e) => _dashboardForm.ShowSubmitComplaint();
             button4.Click += (sender, e) => _dashboardForm.LogoutToLogin();
+
+            SetupGraphics();
+        }
+
+        // ───────────── GDI+ / Graphics / Visualization ─────────────
+
+        /// <summary>Follow-up steps shown on every complaint card.</summary>
+        private static readonly string[] TrackerSteps = { "Submitted", "Pending", "In Progress", "Resolved" };
+
+        /// <summary>
+        /// Current status of each card. Same values as the Student Dashboard table
+        /// (C001 = Pending, C002 = Resolved). Replace with real data later.
+        /// </summary>
+        private const string StatusC001 = "Pending";
+        private const string StatusC002 = "Resolved";
+
+        /// <summary>Sidebar gradient, status strip + status tracker on each complaint card.</summary>
+        private void SetupGraphics()
+        {
+            GdiHelpers.AttachSidebarGradient(pnlSidebar);
+            GdiHelpers.EnableDoubleBuffering(pnlComplaint1);
+            GdiHelpers.EnableDoubleBuffering(panel1);
+
+            // Card C001 (panel1 is already connected to panel1_Paint in the Designer)
+            pnlComplaint1.Paint += (s, e) => PaintComplaintCard(e.Graphics, pnlComplaint1, StatusC001);
+        }
+
+        /// <summary>
+        /// Draws a colored strip on the card's left edge and the status tracker
+        /// (Submitted → Pending → In Progress → Resolved) in the free space on the right.
+        /// </summary>
+        private static void PaintComplaintCard(Graphics g, Panel card, string status)
+        {
+            GdiHelpers.HighQuality(g);
+            var color = GdiHelpers.StatusColor(status);
+
+            using (var strip = new SolidBrush(color))
+                g.FillRectangle(strip, 0, 0, 6, card.ClientSize.Height);
+
+            int current = Array.FindIndex(TrackerSteps, s => string.Equals(s, status, StringComparison.OrdinalIgnoreCase));
+            using var font = new Font("Segoe UI", 8.5F);
+            GdiHelpers.DrawStatusTracker(g, new Rectangle(300, 58, 460, 60), TrackerSteps, Math.Max(0, current), font);
         }
 
 
@@ -78,7 +121,8 @@ namespace StudentComplaintTracking.Forms
         private void lblWelcome_Click(object sender, EventArgs e) { }
         private void lblTitle_Click(object sender, EventArgs e) { }
         private void lblSubmit_Click(object sender, EventArgs e) { }
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        // Card C002: strip + status tracker
+        private void panel1_Paint(object sender, PaintEventArgs e) => PaintComplaintCard(e.Graphics, panel1, StatusC002);
         private void label3_Click(object sender, EventArgs e) { }
         private void label6_Click(object sender, EventArgs e) { }
     }

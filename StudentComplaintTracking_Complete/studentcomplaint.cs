@@ -1,4 +1,5 @@
 using Student_Dashboard;
+using StudentComplaintTracking.Gdi;
 namespace WinFormsApp1
 {
     public partial class LoginForm : Form
@@ -9,6 +10,39 @@ namespace WinFormsApp1
         public LoginForm()
         {
             InitializeComponent();
+            SetupGraphics();
+        }
+
+        // ───────────── GDI+ / Graphics / Visualization ─────────────
+
+        /// <summary>
+        /// Gradient header, soft shadow around the login card and an underline
+        /// under the selected role (Student).
+        /// </summary>
+        private void SetupGraphics()
+        {
+            GdiHelpers.EnableDoubleBuffering(this);
+            GdiHelpers.EnableDoubleBuffering(headerPanel);
+
+            // Header text must be see-through so the gradient shows behind it
+            label1.BackColor = Color.Transparent;
+            headerPanel.Paint += (s, e) =>
+                GdiHelpers.FillGradient(e.Graphics, headerPanel.ClientRectangle, System.Drawing.Drawing2D.LinearGradientMode.Horizontal);
+            GdiHelpers.RedrawOnResize(headerPanel);
+
+            Paint += (s, e) => GdiHelpers.DrawShadow(e.Graphics, loginPanel.Bounds, 8, 4);
+            Resize += (s, e) => Invalidate();
+
+            loginPanel.Paint += loginPanel_Paint;
+            btnStudent.Click += (s, e) => loginPanel.Invalidate();
+        }
+
+        /// <summary>Rounded accent bar under the Student role button.</summary>
+        private void loginPanel_Paint(object? sender, PaintEventArgs e)
+        {
+            GdiHelpers.HighQuality(e.Graphics);
+            var bar = new Rectangle(btnStudent.Left + 20, btnStudent.Bottom + 3, btnStudent.Width - 40, 4);
+            GdiHelpers.FillRounded(e.Graphics, bar, 2, GdiHelpers.Blue);
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
